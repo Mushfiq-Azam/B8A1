@@ -1,6 +1,6 @@
 # Type Narrowing in TypeScript
 
-Type narrowing is the process of reducing a broad type to a more specific type inside a block of code. TypeScript uses control flow checks to understand what a value can be at each point. Narrowing makes unions safer and easier to use.
+Type narrowing is when you take a general type and narrow it down to a more specific type inside a block of code. TypeScript uses control flow analysis to reason about what a value can be at any given point. Narrowing is safer and easier for unions to use.
 
 Consider a variable typed as `string | number`. You cannot call string methods on it directly because it might be a number. A `typeof` check solves this problem:
 
@@ -41,6 +41,6 @@ function speak(animal: Cat | Dog): void {
 }
 ```
 
-Narrowing also works with literal checks, truthiness, and user-defined type guards. These techniques prevent invalid property access and catch mistakes at compile time. Instead of using unsafe casts, you can prove the type to the compiler. This improves autocomplete, refactoring safety, and runtime reliability. Clear checks also make code easier to review. Good narrowing keeps unions expressive without giving up type safety.
+Narrowing also applies to literal checks, truthiness, and user-defined type guards. These techniques stop you from accessing properties that don't exist and catch errors at compile time. You can prove the type to the compiler, instead of using unsafe casts. This leads to better autocomplete, refactoring safety and reliability at runtime. Clear checks also make code easier to read through. Good narrowing lets unions stay expressive without sacrificing type safety.
 
 Type narrowing turns uncertain unions into precise types. By using `typeof`, `instanceof`, and `in`, you can write flexible code that remains safe and readable.
