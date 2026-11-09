@@ -1,6 +1,6 @@
 # Type Aliases vs Interfaces in TypeScript
 
-TypeScript gives developers two common ways to describe the shape of data: type aliases and interfaces. Both appear often in real projects, so knowing their differences helps you choose the right tool. This post compares them with small examples.
+TypeScript provides developers with two common ways to describe the shape of data: type aliases and interfaces. Both are common in real projects, so the knowledge of their differences will help you to choose the right tool. In this post we will compare them with small examples.
 
 A type alias creates a new name for any type. It can name objects, unions, tuples, and primitives:
 
@@ -18,7 +18,7 @@ interface Product {
 }
 ```
 
-TypeScript uses structural typing, so compatibility depends on a value's members, not its type name. If two types share the same required properties, values can be assigned between them.
+TypeScript is structurally typed . Compatibility is based on the members of a value , not on the name of the type . If two types have the same required properties you can assign values between them.
 
 Interfaces support declaration merging. If you declare the same interface twice, TypeScript combines the declarations:
 
@@ -47,6 +47,6 @@ type AdminRole = User & { permissions: string[] };
 type Result = string | number;
 ```
 
-Choose an interface for extendable object shapes and public APIs. Choose a type alias for unions, tuples, primitives, and advanced type transformations. Start with the simpler option and change it only when your design needs more flexibility. Both tools are useful, and experienced developers often mix them.
+Interface for public APIs and extensible object shapes. Choose a type alias for unions, tuples, primitives, and advanced type transformations.  Choose the easier option and change it only if your design needs more flexibility. Both tools are useful and experienced developers often mix them.
 
-In short, interfaces are great for reusable object contracts, while type aliases handle flexible combinations. Choose based on the problem. Understanding both makes your TypeScript code clearer and safer.
+In short, interfaces are good for reusable object contracts, while type aliases are for flexible combinations. Pick depending on the problem. Knowing both makes your Typescript code more clear and safer.
